@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#101827">
+  <title>پنل مدیریت | منگول</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <header class="topbar">
+    <div><span class="brand-mark">M</span><div><strong>منگول</strong><small>پنل تحلیل بازدید</small></div></div>
+    <div class="top-actions"><span class="live-dot"></span><span id="updated-label">در انتظار اتصال</span><button id="logout-button" class="button ghost hidden" type="button">خروج</button></div>
+  </header>
+
+  <main class="admin-wrap">
+    <section id="login-panel" class="login-card">
+      <div class="lock-icon">🔐</div>
+      <h1>ورود مدیر</h1>
+      <p class="muted">این بخش فقط برای مدیر مجاز است.</p>
+      <form id="login-form">
+        <label for="admin-password">رمز عبور مدیر</label>
+        <input id="admin-password" type="password" autocomplete="current-password" minlength="1" maxlength="256" required>
+        <button class="button primary full" type="submit">ورود امن</button>
+        <p id="login-error" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <div class="heading-row">
+        <div><p class="eyebrow">داشبورد مدیر</p><h1>وضعیت بازدیدها</h1><p class="muted">آمار تقریباً زنده؛ به‌روزرسانی هر ۵ ثانیه</p></div>
+        <span class="status-pill"><span class="live-dot"></span> زنده</span>
+      </div>
+      <div class="stats-grid">
+        <article class="stat-card"><span>اکنون آنلاین</span><strong id="online-count">۰</strong><small>فعال در ۹۰ ثانیهٔ اخیر</small></article>
+        <article class="stat-card"><span>بازدید صفحه در ۲۴ ساعت</span><strong id="pageviews-count">۰</strong><small>شامل بازدیدهای تکراری</small></article>
+        <article class="stat-card"><span>بازدیدکنندهٔ یکتا در ۲۴ ساعت</span><strong id="visitors-count">۰</strong><small>بر اساس شناسهٔ مرورگر</small></article>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel chart-panel">
+          <div class="panel-heading"><h2>بازدیدهای ۷ روز اخیر</h2><span class="muted">تعداد صفحه‌مشاهده</span></div>
+          <div id="daily-chart" class="bar-chart" aria-label="نمودار بازدیدهای هفت روز اخیر"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading"><h2>نوع دستگاه</h2></div><div id="devices-list" class="metric-list"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading"><h2>مرورگر</h2></div><div id="browsers-list" class="metric-list"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading"><h2>سیستم‌عامل</h2></div><div id="os-list" class="metric-list"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading"><h2>کشور / منطقه</h2></div><div id="countries-list" class="metric-list"></div>
+          <p class="tiny muted">موقعیت تقریبی و وابسته به هدرهای در دسترس است.</p>
+        </article>
+      </div>
+
+      <section class="panel history-panel">
+        <div class="panel-heading"><h2>آخرین بازدیدها</h2><span class="muted">حداکثر ۵۰ مورد</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>زمان</th><th>صفحه</th><th>دستگاه</th><th>مرورگر</th><th>سیستم‌عامل</th><th>منطقه</th></tr></thead>
+            <tbody id="recent-rows"><tr><td colspan="6">در حال دریافت اطلاعات…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+      <p class="footnote">اطلاعات فنی ممکن است تخمینی باشد. مدیرانی که با همین نشست وارد شده‌اند در آمار عمومی ثبت نمی‌شوند. بازدیدهای آزمایشی را با یک مرورگر یا پنجرهٔ دیگر که وارد پنل مدیر نشده انجام بده.</p>
+    </section>
+  </main>
+</body>
+</html>
